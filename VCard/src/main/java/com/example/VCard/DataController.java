@@ -36,7 +36,7 @@ public class DataController {
         for (Element el : els){
             if (el.attr("type").equals("application/ld+json")) {
                 str.append(el.select("a").get(0).attr("tittle"));
-                //TODO add from json to list here
+                companies.add(gson.fromJson(el.data(),Company.class));
             }
         }
 

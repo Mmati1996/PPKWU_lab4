@@ -1,0 +1,4 @@
+api generujące vCardy na podstawie serwisu panoramafirm.pl
+
+api generuje listy firm oraz tworzy vCard wybranej firmy.
+

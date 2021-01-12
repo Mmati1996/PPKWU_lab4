@@ -4,10 +4,9 @@ import com.google.gson.Gson;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
@@ -16,8 +15,9 @@ import java.util.ArrayList;
 public class DataController {
 
     @RequestMapping(path = "/search")
-    public ResponseEntity<String> panoramaFirmSearcher(@RequestParam String name, HttpServletResponse response){
-        String url = "https://panoramafirm.pl/szukaj?k="+name+"&l";
+    public ModelAndView panoramaFirmSearcher(@RequestParam String name, @RequestParam String city,@RequestParam HttpServletResponse response){
+        String url = "https://panoramafirm.pl/szukaj?k="+name+"&l="+city;
+        StringBuilder stringBuilder = new StringBuilder();
 
         org.jsoup.nodes.Document doc = null;
 
@@ -42,6 +42,7 @@ public class DataController {
 
 
         toReturn = str.toString();
-        return new ResponseEntity<String>( toReturn, HttpStatus.OK);
+        return new ModelAndView("view","",toReturn);
+        //return new ResponseEntity<String>( toReturn, HttpStatus.OK);
     }
 }

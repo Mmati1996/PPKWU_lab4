@@ -1,4 +1,7 @@
-api generujące vCardy na podstawie serwisu panoramafirm.pl
+api generuje i wyświetla listę firm spełniających wymagania użytkownika.
+Każda firma ma opcję pobrania informacji o firmie w postaci pliku z vCardem.
 
-api generuje listy firm oraz tworzy vCard wybranej firmy.
+by skorzystać z api należy użyć adresu:
+http://localhost:8080/search?name=NAZWA&city=MIASTO
 
+gdzie w miejscu "NAZWA" należy podać frazę, według jakiej szukamy firm, a w miejscu "MIASTO" lokalizację, w której ich szukamy

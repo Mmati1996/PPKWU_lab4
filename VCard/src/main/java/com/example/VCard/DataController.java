@@ -41,6 +41,7 @@ public class DataController {
         }
 
 
+
         toReturn = str.toString();
         return new ModelAndView("view","",toReturn);
         //return new ResponseEntity<String>( toReturn, HttpStatus.OK);
